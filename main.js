@@ -1,31 +1,43 @@
-/**
- * Using insertBefore
- * todo reference - obtain a reference to where we'll add it
- * todo create - create an li element
- * todo reference - obtain a reference to second element
- * todo print - print second element reference to console
- * todo insert - use insertBefore to add newMovie just before the second element.
- * */
-
-// REFERENCE
-const list = document.getElementById("my-favorite-books");
-const list = document.getElementById("my-closet");
-
-// CREATE
-let newMovie = document.createElement("li");
-newMovie.innerText = "Dr. Strangelove";
-
-// REFERENCE
-let second = list.children[1];
-
-// PRINT
-console.log(second);
-
-// INSERT
-list.insertBefore(newMovie, second);
-
 let a = document.createElement("a");
-a.href = "https://github.com/LucasFGreenlee";
-a.textContent = "Github";
+let books = document.createElement("ol");
+let closet = document.createElement("ul");
+let Book1 = document.createElement("li");
+let Book2 = document.createElement("li");
+let Book3 = document.createElement("li");
+let Shirt1 = document.createElement("li");
+let Shirt2 = document.createElement("li");
+let Shirt3 = document.createElement("li");
+let Dinner = document.createElement("ul");
+let Food1 = document.createElement("li");
+let Food2 = document.createElement("li");
+let secondBook = books.children[1];
+let secondShirt = closet.children[1];
 
+a.href = "https://github.com/LucasFGreenlee/My-Favorites-List";
+a.textContent = "This repo";
+books.textContent = "My Favorite Books";
+closet.textContent = "My Closet";
+Dinner.textContent = "Dinner";
+Book1.textContent = "Hunger Games";
+Book2.textContent = "Eragon";
+Book3.textContent = "The art of War";
+Shirt1.textContent = "Black Shirt";
+Shirt2.textContent = "White Shirt";
+Shirt3.textContent = "Cookies Shirt";
+Food1.textContent = "Tacos";
+Food2.textContent = "Rice Cakes";
+
+document.body.appendChild(books);
+document.body.appendChild(closet);
+document.body.appendChild(Dinner);
 document.body.appendChild(a);
+books.appendChild(Food2);
+books.appendChild(Book1);
+books.insertBefore(Food2, secondBook);
+books.appendChild(Book3);
+closet.appendChild(Shirt1);
+closet.insertBefore(Shirt2, secondShirt);
+closet.appendChild(Shirt3);
+Dinner.appendChild(Food1);
+let Food2Save = books.removeChild(Food2);
+Dinner.appendChild(Food2Save);
